@@ -1,0 +1,62 @@
+{
+  "name": "armotusitio-icons",
+  "displayName": "ArmoTuSitio Icons",
+  "description": "Original semantic file and folder iconography: Prism, Daylight, Focus and High Contrast. No runtime.",
+  "version": "0.1.0",
+  "publisher": "armotusitio",
+  "preview": true,
+  "license": "MIT",
+  "icon": "assets/ats-glyph.png",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "armotusitio",
+    "file icons",
+    "folder icons",
+    "icon themes",
+    "prism",
+    "accessibility",
+    "monochrome"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Drako01/icons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Drako01/icons/issues"
+  },
+  "homepage": "https://armotusitio.com.ar/",
+  "contributes": {
+    "iconThemes": [
+      {
+        "id": "ats-prism",
+        "label": "ArmoTuSitio Prism",
+        "path": "./themes/ats-prism-icon-theme.json"
+      },
+      {
+        "id": "ats-daylight",
+        "label": "ArmoTuSitio Daylight",
+        "path": "./themes/ats-daylight-icon-theme.json"
+      },
+      {
+        "id": "ats-focus",
+        "label": "ArmoTuSitio Focus",
+        "path": "./themes/ats-focus-icon-theme.json"
+      },
+      {
+        "id": "ats-contrast",
+        "label": "ArmoTuSitio High Contrast",
+        "path": "./themes/ats-contrast-icon-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node scripts/generate.mjs",
+    "check": "node scripts/generate.mjs && node --test tests/*.test.mjs",
+    "package": "node scripts/generate.mjs && npx --yes @vscode/vsce@4.1.0 package --no-dependencies --out dist/armotusitio-icons-0.1.0.vsix"
+  }
+}
