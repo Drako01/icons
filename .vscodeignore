@@ -1,0 +1,9 @@
+scripts/**
+tests/**
+docs/**
+.github/**
+node_modules/**
+dist/**
+.gitignore
+.gitattributes
+.DS_Store
