@@ -4,7 +4,7 @@
 
 [![CI](https://github.com/Drako01/icons/actions/workflows/ci.yml/badge.svg)](https://github.com/Drako01/icons/actions/workflows/ci.yml) ![Preview](https://img.shields.io/badge/Preview-0.1.0-F9ED32?labelColor=141B22) ![Runtime](https://img.shields.io/badge/Runtime-Zero-141B22) ![MIT](https://img.shields.io/badge/License-MIT-344456)
 
-![ArmoTuSitio icon atlas — generated concept, not a screenshot](gallery/overview.svg)
+[Ver la lámina conceptual de los cuatro estilos (SVG)](gallery/overview.svg) — [View the four-mode conceptual icon atlas](gallery/overview.svg)
 
 > **Preview 0.1.0.** This is a **generated vector contact sheet**, not a VS Code screenshot. Actual editor screenshots are pending manual review. **Not published** to VS Code Marketplace or Open VSX.
 
