@@ -8,7 +8,7 @@ const content=(url)=>readFileSync(url,"utf8");
 
 test("manifest remains declarative with four selectable themes",()=>{
  assert.equal(pkg.name,"armotusitio-icons");
- assert.equal(pkg.version,"0.1.0");
+ assert.equal(pkg.version,"0.1.1");
  assert.equal(pkg.publisher,"armotusitio");
  assert.equal(pkg.main,undefined);
  assert.equal(pkg.activationEvents,undefined);
@@ -69,4 +69,26 @@ test("preview atlas is visibly marked as conceptual, not screenshot",()=>{
  const svg=content(new URL("../gallery/overview.svg",import.meta.url));
  assert.match(svg,/Conceptual catalog/);
  assert.match(svg,/Not an actual editor screenshot/);
+});
+
+test("v0.1.1 product preview and exact CI-publish release contract",()=>{
+ const readme=content(new URL("../README.md",import.meta.url));
+ assert.match(readme,/!\[[^\]]+\]\(gallery\/overview\.png\)/);
+ assert.doesNotMatch(readme,/!\[[^\]]+\]\([^)]*\.svg\)/);
+ const image=readFileSync(new URL("../gallery/overview.png",import.meta.url));
+ assert.equal(image.subarray(0,8).toString("hex"),"89504e470d0a1a0a");
+ assert.equal(image.readUInt32BE(16),1280);
+ assert.equal(image.readUInt32BE(20),760);
+ const wf=content(new URL("../.github/workflows/publish.yml",import.meta.url));
+ const ci=content(new URL("../.github/workflows/ci.yml",import.meta.url));
+ assert.match(wf,/push:\s*\n\s*branches:\s*\[main\]/);
+ assert.match(wf,/gh run download/);
+ assert.match(wf,/head_sha/);
+ assert.match(wf,/main_tree/);
+ assert.match(wf,/sha256sum -c/);
+ assert.match(wf,/ovsx@1\.4\.0/);
+ assert.match(wf,/--trusted-publishing/);
+ assert.match(wf,/--oidc/);
+ assert.doesNotMatch(wf,/npm run (check|package)|node --test/);
+ for(const s of [pkg.scripts.package,ci])assert.match(s,/armotusitio-icons-0\.1\.1\.vsix/);
 });

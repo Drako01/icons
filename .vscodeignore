@@ -7,3 +7,5 @@ dist/**
 .gitignore
 .gitattributes
 .DS_Store
+
+gallery/**
