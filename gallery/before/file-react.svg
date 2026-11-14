@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<title>ArmoTuSitio file react</title>
+<path d="M6.5 2.75h8.6l4.4 4.5V20.5c0 .65-.5 1.15-1.15 1.15H6.5c-.65 0-1.15-.5-1.15-1.15V3.9c0-.65.5-1.15 1.15-1.15z" fill="#1B2936" stroke="#C5D6E8" stroke-width="1.5"/><path d="M15.1 2.75v4.5h4.4" stroke="#64DAE7" stroke-width="1.5"/><path d="M7.3 19.3h3" stroke="#64DAE7" stroke-width="1.2"/>
+<g transform="translate(4.6 5.8) scale(.62)" stroke="#64DAE7" stroke-width="2.15" fill="none" style="color:#64DAE7"><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/><ellipse cx="12" cy="12" rx="9" ry="3.5"/><ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(120 12 12)"/></g>
+</svg>

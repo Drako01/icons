@@ -2,7 +2,7 @@
 
 **Iconos originales. Reconocimiento inmediato. Un Explorer que trabaja a tu favor.**
 
-[![CI](https://github.com/Drako01/icons/actions/workflows/ci.yml/badge.svg)](https://github.com/Drako01/icons/actions/workflows/ci.yml) ![Version](https://img.shields.io/badge/version-0.1.1-F9ED32?labelColor=141B22) ![VS%20Code](https://img.shields.io/badge/VS%20Code-1.90%2B-2C3E50) ![License](https://img.shields.io/badge/license-MIT-2C3E50) ![Runtime](https://img.shields.io/badge/runtime-zero-2C3E50)
+[![CI](https://github.com/Drako01/icons/actions/workflows/ci.yml/badge.svg)](https://github.com/Drako01/icons/actions/workflows/ci.yml) ![Version](https://img.shields.io/badge/version-0.1.2-F9ED32?labelColor=141B22) ![VS%20Code](https://img.shields.io/badge/VS%20Code-1.90%2B-2C3E50) ![License](https://img.shields.io/badge/license-MIT-2C3E50) ![Runtime](https://img.shields.io/badge/runtime-zero-2C3E50)
 
 <p align="center">
   <a href="https://marketplace.visualstudio.com/items?itemName=armotusitio.armotusitio-icons"><strong>Visual Studio Marketplace</strong></a> &nbsp;·&nbsp;
@@ -81,7 +81,7 @@ Buscá **ArmoTuSitio Icons**, instalá la extensión publicada por **armotusitio
 Descargá la versión desde [GitHub Releases](https://github.com/Drako01/icons/releases), o el artefacto **validated-vsix** de una ejecución verde de [CI](https://github.com/Drako01/icons/actions/workflows/ci.yml). Verificá su archivo de checksum antes de instalar.
 
 ~~~powershell
-code --install-extension .\armotusitio-icons-0.1.1.vsix
+code --install-extension .\armotusitio-icons-0.1.2.vsix
 ~~~
 
 El mismo VSIX puede utilizarse en ArmoTuSitio IDE y forks compatibles que soporten File Icon Themes.
@@ -144,8 +144,8 @@ El desarrollo utiliza Node.js 24 para la generación local y GitHub Actions, sin
 ~~~bash
 npm run build      # Generar SVG y los cuatro temas de iconos
 npm run check      # Generador + tests de integridad, asociaciones y seguridad
-npm run package    # Empaquetar armotusitio-icons-0.1.1.vsix
-python3 scripts/verify-vsix.py dist/armotusitio-icons-0.1.1.vsix
+npm run package    # Empaquetar armotusitio-icons-0.1.2.vsix
+python3 scripts/verify-vsix.py dist/armotusitio-icons-0.1.2.vsix
 ~~~
 
 El CI valida Ubuntu, Windows y macOS. La publicación de cambios de versión en **main** reutiliza el VSIX y el SHA-256 verificados en el PR; no recompila ni repite la matriz de pruebas tras el merge. Los dos registros se publican mediante **OIDC Trusted Publishing** y el release incorpora exactamente el mismo VSIX.

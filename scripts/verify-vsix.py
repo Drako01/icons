@@ -6,7 +6,7 @@ with zipfile.ZipFile(path) as z:
     names=set(z.namelist())
     pkg=json.loads(z.read("extension/package.json"))
     assert pkg["name"]=="armotusitio-icons" and pkg["publisher"]=="armotusitio"
-    assert pkg["version"]=="0.1.1" and pkg.get("preview") is True
+    assert pkg["version"]=="0.1.2" and pkg.get("preview") is True
     assert not pkg.get("main") and not pkg.get("activationEvents")
     assert len(pkg["contributes"]["iconThemes"])==4
     assert "extension/assets/ats-glyph.png" in names

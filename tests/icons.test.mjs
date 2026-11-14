@@ -8,7 +8,7 @@ const content=(url)=>readFileSync(url,"utf8");
 
 test("manifest remains declarative with four selectable themes",()=>{
  assert.equal(pkg.name,"armotusitio-icons");
- assert.equal(pkg.version,"0.1.1");
+ assert.equal(pkg.version,"0.1.2");
  assert.equal(pkg.publisher,"armotusitio");
  assert.equal(pkg.main,undefined);
  assert.equal(pkg.activationEvents,undefined);
@@ -71,7 +71,7 @@ test("preview atlas is visibly marked as conceptual, not screenshot",()=>{
  assert.match(svg,/Not an actual editor screenshot/);
 });
 
-test("v0.1.1 product preview and exact CI-publish release contract",()=>{
+test("v0.1.2 product preview and exact CI-publish release contract",()=>{
  const readme=content(new URL("../README.md",import.meta.url));
  assert.match(readme,/!\[[^\]]+\]\(gallery\/overview\.png\)/);
  assert.doesNotMatch(readme,/!\[[^\]]+\]\((?:\.\/)?(?:gallery|assets|docs)\/[^)]*\.svg\)/);
@@ -90,5 +90,5 @@ test("v0.1.1 product preview and exact CI-publish release contract",()=>{
  assert.match(wf,/--trusted-publishing/);
  assert.match(wf,/--oidc/);
  assert.doesNotMatch(wf,/npm run (check|package)|node --test/);
- for(const s of [pkg.scripts.package,ci])assert.match(s,/armotusitio-icons-0\.1\.1\.vsix/);
+ for(const s of [pkg.scripts.package,ci])assert.match(s,/armotusitio-icons-0\.1\.2\.vsix/);
 });
