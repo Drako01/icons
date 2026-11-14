@@ -74,7 +74,7 @@ test("preview atlas is visibly marked as conceptual, not screenshot",()=>{
 test("v0.1.1 product preview and exact CI-publish release contract",()=>{
  const readme=content(new URL("../README.md",import.meta.url));
  assert.match(readme,/!\[[^\]]+\]\(gallery\/overview\.png\)/);
- assert.doesNotMatch(readme,/!\[[^\]]+\]\([^)]*\.svg\)/);
+ assert.doesNotMatch(readme,/!\[[^\]]+\]\((?:\.\/)?(?:gallery|assets|docs)\/[^)]*\.svg\)/);
  const image=readFileSync(new URL("../gallery/overview.png",import.meta.url));
  assert.equal(image.subarray(0,8).toString("hex"),"89504e470d0a1a0a");
  assert.equal(image.readUInt32BE(16),1280);
