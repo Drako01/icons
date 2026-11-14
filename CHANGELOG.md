@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.2] — Silhouette-first icon redesign
+
+- Larger, frameless file symbols with technology-specific vector artwork and path-based monograms.
+- Distinct shapes for JS/JSON, C/C++/C# and CSS/SCSS/LESS.
+- Chromatic folders with subtle bodies, semantic marks and separate expanded states.
+- Preserved four palettes and all existing file, folder and language associations.
+- Local interactive review page, frozen before vectors and regenerated visual galleries.
+- Release manifest, package verification and CI artifact naming aligned to 0.1.2.
+
 ## [0.1.1] — Product presentation and automated trusted release
 
 - Complete professional bilingual README with a PNG preview rendered from the original icon SVG atlas.
