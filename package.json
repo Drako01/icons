@@ -2,9 +2,9 @@
   "name": "armotusitio-icons",
   "displayName": "ArmoTuSitio Icons",
   "description": "An original, precision-crafted SVG file icon system for VS Code. Prism, Daylight, Focus and High Contrast.",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "publisher": "armotusitio",
-  "preview": true,
+  "preview": false,
   "license": "MIT",
   "icon": "assets/ats-glyph.png",
   "engines": {
@@ -58,7 +58,7 @@
     "build": "node scripts/generate.mjs",
     "preview": "node scripts/generate.mjs && node scripts/preview.mjs",
     "check": "node scripts/generate.mjs && node --test tests/*.test.mjs",
-    "package": "node scripts/generate.mjs && npx --yes @vscode/vsce@4.1.0 package --no-dependencies --out dist/armotusitio-icons-0.1.2.vsix"
+    "package": "node scripts/generate.mjs && npx --yes @vscode/vsce@4.1.0 package --no-dependencies --out dist/armotusitio-icons-0.2.0.vsix"
   },
   "galleryBanner": {
     "color": "#141B22",

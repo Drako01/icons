@@ -7,6 +7,90 @@ const GLYPHS={"doc":"<path d=\"M7 4h8l3 3v13H7zM15 4v3h3M9.5 11h6M9.5 15h6\"/>",
 const FILE={"generic":["doc","blue"],"javascript":["code","gold"],"typescript":["typed","blue"],"jsx":["react","cyan"],"tsx":["react","blue"],"react":["react","cyan"],"vue":["vue","green"],"angular":["angular","red"],"svelte":["spark","orange"],"astro":["rocket","violet"],"next":["layers","blue"],"json":["code","gold"],"yaml":["layers","violet"],"toml":["settings","orange"],"xml":["code","orange"],"html":["html","orange"],"css":["css","blue"],"scss":["css","violet"],"less":["css","cyan"],"markdown":["markdown","blue"],"mdx":["markdown","violet"],"text":["doc","blue"],"python":["python","green"],"go":["go","cyan"],"java":["coffee","orange"],"kotlin":["bolt","violet"],"rust":["rust","orange"],"php":["php","violet"],"c":["code","cyan"],"cpp":["code","blue"],"csharp":["typed","violet"],"swift":["spark","orange"],"dart":["bolt","cyan"],"ruby":["spark","red"],"shell":["terminal","green"],"powershell":["terminal","blue"],"sql":["data","violet"],"graphql":["graph","red"],"prisma":["cube","green"],"terraform":["layers","violet"],"docker":["container","blue"],"kubernetes":["workflow","blue"],"git":["git","orange"],"env":["lock","red"],"lock":["key","orange"],"test":["test","green"],"config":["settings","blue"],"package":["cube","gold"],"build":["bolt","orange"],"ci":["workflow","green"],"ai":["robot","violet"],"notebook":["doc","orange"],"proto":["workflow","blue"],"openapi":["globe","green"],"redis":["data","red"],"mongo":["data","green"],"postgres":["data","blue"],"sqlite":["data","gold"],"csv":["grid","green"],"pdf":["doc","red"],"image":["image","violet"],"svg":["image","orange"],"video":["film","violet"],"audio":["music","cyan"],"archive":["archive","orange"],"font":["type","violet"],"binary":["cube","blue"],"log":["terminal","blue"],"license":["shield","green"],"security":["shield","red"],"readme":["markdown","blue"],"docs":["doc","blue"],"eslint":["test","violet"],"prettier":["palette","violet"],"storybook":["layers","violet"],"tailwind":["css","cyan"],"vite":["bolt","violet"]};
 const FOLDER={"generic":["layers","blue"],"root":["cube","gold"],"src":["code","gold"],"components":["layers","cyan"],"pages":["doc","blue"],"routes":["arrow","cyan"],"api":["workflow","green"],"backend":["data","blue"],"frontend":["globe","cyan"],"database":["data","violet"],"tests":["test","green"],"config":["settings","blue"],"assets":["image","violet"],"public":["globe","cyan"],"docs":["doc","blue"],"scripts":["terminal","orange"],"build":["bolt","orange"],"infra":["cloud","violet"],"ci":["workflow","green"],"ai":["robot","violet"],"auth":["lock","red"],"hooks":["arrow","cyan"],"state":["graph","violet"],"types":["typed","blue"],"utils":["settings","blue"],"styles":["palette","violet"],"locales":["globe","green"],"mobile":["layers","blue"],"packages":["cube","gold"],"vendor":["archive","blue"],"git":["git","orange"],"security":["shield","red"],"workers":["bolt","orange"],"cache":["data","green"],"features":["spark","gold"],"shared":["layers","cyan"],"migrations":["arrow","violet"],"controllers":["settings","cyan"],"services":["workflow","green"],"models":["cube","blue"],"repositories":["data","violet"],"prisma":["cube","green"],"fonts":["type","violet"],"images":["image","violet"]};
 const MAPPING={"extensions":{"javascript":"js mjs cjs","typescript":"ts mts cts d.ts","jsx":"jsx","tsx":"tsx","json":"json jsonc json5 jsonl","yaml":"yaml yml","toml":"toml","xml":"xml xsd xsl","html":"html htm xhtml","css":"css module.css","scss":"scss module.scss","less":"less","markdown":"md markdown mdown","mdx":"mdx","text":"txt rtf","python":"py pyi pyx","go":"go","java":"java class","kotlin":"kt kts","rust":"rs","php":"php phtml blade.php","c":"c h","cpp":"cc cpp cxx hpp hxx","csharp":"cs csx","swift":"swift","dart":"dart","ruby":"rb rake gemspec","shell":"sh bash zsh fish","powershell":"ps1 psm1 psd1","sql":"sql psql mysql","graphql":"graphql gql","prisma":"prisma","terraform":"tf tfvars hcl","docker":"dockerfile containerfile","git":"patch diff","env":"env env.local env.production env.development env.test pem key p12 pfx","lock":"lock","test":"test.js spec.js test.ts spec.ts test.tsx spec.tsx test.jsx spec.jsx e2e.ts cy.ts feature","config":"ini conf cfg properties editorconfig","package":"vsix tgz whl gem","build":"gradle mk","ai":"prompt","notebook":"ipynb","proto":"proto thrift","redis":"rdb","mongo":"bson","postgres":"dump","sqlite":"sqlite sqlite3 db","csv":"csv tsv xlsx xls ods","pdf":"pdf","image":"png jpg jpeg gif webp avif ico bmp tiff","svg":"svg","video":"mp4 mov mkv webm","audio":"mp3 ogg wav flac aac","archive":"zip gz 7z rar tar bz2 xz zst","font":"woff woff2 ttf otf","binary":"exe dll so dylib bin dat","log":"log","vue":"vue","svelte":"svelte","astro":"astro"},"filenames":{"package.json":"package","package-lock.json":"lock","pnpm-lock.yaml":"lock","yarn.lock":"lock","bun.lock":"lock","bun.lockb":"lock","composer.json":"package","composer.lock":"lock","cargo.toml":"package","cargo.lock":"lock","go.mod":"go","go.sum":"lock","go.work":"go","pom.xml":"java","build.gradle":"build","build.gradle.kts":"kotlin","settings.gradle":"build","gradlew":"build","gradlew.bat":"build","dockerfile":"docker","containerfile":"docker","docker-compose.yml":"docker","docker-compose.yaml":"docker","compose.yml":"docker","compose.yaml":"docker","makefile":"build","justfile":"build","taskfile.yml":"build","jenkinsfile":"ci","azure-pipelines.yml":"ci","vercel.json":"config","netlify.toml":"config","next.config.js":"next","next.config.mjs":"next","next.config.ts":"next","nuxt.config.ts":"vue","vite.config.ts":"vite","vite.config.js":"vite","tailwind.config.js":"tailwind","tailwind.config.ts":"tailwind","postcss.config.js":"css","eslint.config.js":"eslint","eslint.config.mjs":"eslint","eslint.config.ts":"eslint",".prettierrc":"prettier","prettier.config.js":"prettier",".gitignore":"git",".gitattributes":"git",".gitmodules":"git",".npmignore":"git",".dockerignore":"docker",".env":"env",".env.local":"env",".env.production":"env",".env.development":"env",".env.test":"env",".env.example":"env",".env.sample":"env","readme.md":"readme","readme.mdx":"readme","license":"license","license.md":"license","license.txt":"license","security.md":"security","codeowners":"security","contributing.md":"docs","changelog.md":"readme","tsconfig.json":"typescript","jsconfig.json":"javascript","pyproject.toml":"python","requirements.txt":"python","pipfile":"python","pipfile.lock":"lock","poetry.lock":"lock","uv.lock":"lock","manage.py":"python","appsettings.json":"csharp",".editorconfig":"config",".nvmrc":"config","openapi.yaml":"openapi","openapi.yml":"openapi","swagger.json":"openapi","schema.prisma":"prisma","playwright.config.ts":"test","vitest.config.ts":"test","jest.config.ts":"test","cypress.config.ts":"test","angular.json":"angular","svelte.config.js":"svelte","astro.config.mjs":"astro","index.html":"html","robots.txt":"config","sitemap.xml":"xml","renovate.json":"security"},"folders":{"src":"src","app":"src","lib":"src","source":"src","components":"components","ui":"components","widgets":"components","pages":"pages","views":"pages","screens":"pages","routes":"routes","routing":"routes","api":"api","endpoints":"api","handlers":"api","server":"backend","backend":"backend","client":"frontend","frontend":"frontend","web":"frontend","db":"database","database":"database","data":"database","test":"tests","tests":"tests","__tests__":"tests","e2e":"tests","__mocks__":"tests","fixtures":"tests","coverage":"tests","config":"config","configs":"config",".vscode":"config",".idea":"config","assets":"assets","static":"assets","media":"assets","public":"public","docs":"docs","doc":"docs","documentation":"docs","scripts":"scripts","bin":"scripts","build":"build","dist":"build","out":"build","target":"build","infra":"infra","infrastructure":"infra","terraform":"infra","k8s":"infra","kubernetes":"infra","helm":"infra",".github":"ci","workflows":"ci",".circleci":"ci",".gitlab":"ci",".devcontainer":"ci","ai":"ai","prompts":"ai",".claude":"ai",".codex":"ai","agents":"ai","auth":"auth","authentication":"auth","security":"security","hooks":"hooks","composables":"hooks","store":"state","stores":"state","state":"state","types":"types","typings":"types","interfaces":"types","utils":"utils","helpers":"utils","common":"shared","shared":"shared","styles":"styles","css":"styles","scss":"styles","theme":"styles","themes":"styles","i18n":"locales","locales":"locales","translations":"locales","lang":"locales","android":"mobile","ios":"mobile","mobile":"mobile","packages":"packages","modules":"packages","node_modules":"vendor","vendor":"vendor",".git":"git","workers":"workers","jobs":"workers","queues":"workers","cache":"cache","caches":"cache","features":"features","migrations":"migrations","controllers":"controllers","services":"services","models":"models","entities":"models","repositories":"repositories","prisma":"prisma","fonts":"fonts","images":"images","img":"images","icons":"images"},"languages":{"javascript":"javascript","typescript":"typescript","javascriptreact":"jsx","typescriptreact":"tsx","json":"json","jsonc":"json","yaml":"yaml","xml":"xml","html":"html","css":"css","scss":"scss","less":"less","markdown":"markdown","python":"python","go":"go","java":"java","kotlin":"kotlin","rust":"rust","php":"php","c":"c","cpp":"cpp","csharp":"csharp","swift":"swift","dart":"dart","ruby":"ruby","shellscript":"shell","powershell":"powershell","sql":"sql","graphql":"graphql","dockerfile":"docker","terraform":"terraform","prisma":"prisma","vue":"vue","svelte":"svelte"}};
+// Extend the original catalog without changing existing association precedence.
+const additionalFiles = {
+ lua: ["code", "blue", "lua", "lua"],
+ r: ["data", "blue", "r rmd rproj", "r"],
+ julia: ["code", "violet", "jl", "julia"],
+ perl: ["code", "blue", "pl pm pod t", "perl perl6"],
+ scala: ["layers", "red", "scala sc sbt", "scala"],
+ groovy: ["code", "cyan", "groovy gvy gy gsh", "groovy"],
+ fsharp: ["typed", "blue", "fs fsi fsx fsscript", "fsharp"],
+ clojure: ["code", "green", "clj cljs cljc edn", "clojure"],
+ elixir: ["code", "violet", "ex exs", "elixir"],
+ erlang: ["code", "red", "erl hrl", "erlang"],
+ haskell: ["code", "violet", "hs lhs", "haskell"],
+ ocaml: ["code", "orange", "ml mli", "ocaml"],
+ zig: ["bolt", "orange", "zig zon", "zig"],
+ nim: ["code", "gold", "nim nims nimble", "nim"],
+ objectivec: ["code", "blue", "m", "objective-c"],
+ objectivecpp: ["typed", "blue", "mm", "objective-cpp"],
+ assembly: ["code", "red", "asm s inc", "asm"],
+ fortran: ["code", "violet", "f for f90 f95 f03 f08", "fortran fortran-modern"],
+ cobol: ["code", "blue", "cob cbl cpy", "cobol"],
+ pascal: ["code", "orange", "pas pp lpr", "pascal"],
+ lisp: ["code", "violet", "lisp lsp cl el", "lisp"],
+ solidity: ["cube", "blue", "sol", "solidity"],
+ nix: ["settings", "cyan", "nix", "nix"],
+ cmake: ["bolt", "blue", "cmake", "cmake"],
+ latex: ["type", "green", "tex sty cls bib", "latex tex bibtex"],
+ document: ["doc", "blue", "doc docx odt ppt pptx odp epub", ""],
+ wasm: ["code", "violet", "wasm wat", "wat"],
+ batch: ["terminal", "green", "bat cmd", "bat"],
+ pug: ["html", "orange", "pug jade", "jade"],
+ restructuredtext: ["doc", "blue", "rst rest", "restructuredtext"],
+};
+for (const [kind, [glyph, color, extensions, languages]] of Object.entries(additionalFiles)) {
+ FILE[kind] = [glyph, color];
+ MAPPING.extensions[kind] = extensions;
+ for (const language of languages.split(" ").filter(Boolean)) MAPPING.languages[language] = kind;
+}
+const extensionAliases = {
+ html: "vue-html hbs handlebars", css: "styl stylus", scss: "sass", python: "pyw", cpp: "hh ipp tpp c++ h++ cu cuh",
+ csharp: "csproj vbproj sln slnx razor cshtml", fsharp: "fsproj", java: "jar war", kotlin: "kts",
+ shell: "bashrc zshrc", terraform: "tf.json tfvars.json", markdown: "mdown mkd",
+ image: "tif heic psd xcf", audio: "m4a opus aiff", video: "avi m4v mpeg mpg",
+ archive: "tar.gz tar.bz2 tar.xz tar.zst deb rpm iso", config: "code-workspace",
+ test: "test.mjs spec.mjs test.cjs spec.cjs test.mts spec.mts test.cts spec.cts cy.js e2e.js",
+};
+for (const [kind, aliases] of Object.entries(extensionAliases)) {
+ const current = new Set(MAPPING.extensions[kind].split(" "));
+ MAPPING.extensions[kind] = [...new Set([...current, ...aliases.split(" ")])].join(" ");
+}
+Object.assign(MAPPING.filenames, {
+ "cmakelists.txt": "cmake", "cmakepresets.json": "cmake", "cmakeuserpresets.json": "cmake",
+ "mix.exs": "elixir", "mix.lock": "lock", "rebar.config": "erlang", "rebar.lock": "lock",
+ "build.sbt": "scala", "build.sc": "scala", "project.clj": "clojure", "deps.edn": "clojure",
+ "flake.nix": "nix", "flake.lock": "lock", "shell.nix": "nix", "default.nix": "nix",
+ "gemfile": "ruby", "gemfile.lock": "lock", ".ruby-version": "ruby", ".python-version": "python",
+ "project.toml": "julia", "manifest.toml": "lock", "build.zig": "zig", "build.zig.zon": "zig",
+ "pubspec.yaml": "dart", "pubspec.lock": "lock", "analysis_options.yaml": "dart",
+ "deno.json": "typescript", "deno.jsonc": "typescript", "deno.lock": "lock",
+ "biome.json": "config", "biome.jsonc": "config", ".gitlab-ci.yml": "ci",
+ "justfile": "build", ".bashrc": "shell", ".zshrc": "shell", ".bash_profile": "shell",
+ "dockerfile.dev": "docker", "dockerfile.prod": "docker", "containerfile.dev": "docker",
+ "devcontainer.json": "docker", ".devcontainer.json": "docker", "chart.yaml": "kubernetes",
+ "kustomization.yaml": "kubernetes", "kustomization.yml": "kubernetes",
+ "skaffold.yaml": "kubernetes", "tiltfile": "build", "ansible.cfg": "config",
+ "nuxt.config.js": "vue", "svelte.config.ts": "svelte", "astro.config.ts": "astro",
+ "eslint.config.cjs": "eslint", "eslint.config.mts": "eslint", "eslint.config.cts": "eslint",
+ "prettier.config.mjs": "prettier", "prettier.config.cjs": "prettier",
+ ".prettierrc.json": "prettier", ".prettierrc.yaml": "prettier", ".prettierrc.yml": "prettier",
+ "postcss.config.mjs": "css", "postcss.config.cjs": "css",
+ "vite.config.mjs": "vite", "vite.config.mts": "vite",
+ "playwright.config.js": "test", "playwright.config.mjs": "test", "vitest.config.js": "test",
+ "vitest.config.mts": "test", "jest.config.js": "test", "jest.config.mjs": "test",
+ "jest.config.cjs": "test", "cypress.config.js": "test", "openapi.json": "openapi",
+ "swagger.yaml": "openapi", "swagger.yml": "openapi", "requirements-dev.txt": "python",
+ "uv.toml": "python", "tox.ini": "python", "pytest.ini": "test", "conftest.py": "test",
+ "tsconfig.build.json": "typescript", "tsconfig.app.json": "typescript",
+ "tsconfig.node.json": "typescript", "tsconfig.base.json": "typescript",
+});
+Object.assign(MAPPING.languages, {
+ plaintext: "text", toml: "toml", mdx: "mdx", astro: "astro", sass: "scss", stylus: "css",
+ handlebars: "html", razor: "csharp", cuda: "cpp", makefile: "build", gitignore: "git",
+ diff: "git", ini: "config", properties: "config", "dockercompose": "docker", hcl: "terraform",
+});
 function reverse(groups){
  const out={}; for(const [kind,names] of Object.entries(groups))
   for(const key of names.split(" ")) { if(out[key])throw Error("duplicate: "+key); out[key]=kind; }
