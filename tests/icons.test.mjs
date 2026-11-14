@@ -8,7 +8,8 @@ const content=(url)=>readFileSync(url,"utf8");
 
 test("manifest remains declarative with four selectable themes",()=>{
  assert.equal(pkg.name,"armotusitio-icons");
- assert.equal(pkg.version,"0.1.2");
+ assert.equal(pkg.version,"0.2.0");
+ assert.equal(pkg.preview,false);
  assert.equal(pkg.publisher,"armotusitio");
  assert.equal(pkg.main,undefined);
  assert.equal(pkg.activationEvents,undefined);
@@ -65,13 +66,55 @@ test("Focus monochrome, Daylight has separately tuned colors",()=>{
  assert.notEqual(prism,daylight);
  assert.doesNotMatch(focus,/#F9ED32|#64DAE7|#76BAFF/);
 });
+
+test("expanded catalog resolves languages, extensions and exact config names in every palette",()=>{
+ const extensions = {
+  lua:"lua", r:"r", jl:"julia", pl:"perl", scala:"scala", groovy:"groovy", fs:"fsharp",
+  clj:"clojure", ex:"elixir", erl:"erlang", hs:"haskell", ml:"ocaml", zig:"zig", nim:"nim",
+  m:"objectivec", mm:"objectivecpp", asm:"assembly", f90:"fortran", cob:"cobol", pas:"pascal",
+  lisp:"lisp", sol:"solidity", nix:"nix", cmake:"cmake", tex:"latex", docx:"document",
+  wasm:"wasm", cmd:"batch", pug:"pug", rst:"restructuredtext",
+  fsproj:"fsharp", sass:"scss", hbs:"html", cu:"cpp", "tfvars.json":"terraform",
+  "tar.gz":"archive", "test.mts":"test", "spec.cjs":"test", "cy.js":"test",
+ };
+ const languages = {
+  lua:"lua", r:"r", julia:"julia", perl:"perl", scala:"scala", groovy:"groovy", fsharp:"fsharp",
+  clojure:"clojure", elixir:"elixir", erlang:"erlang", haskell:"haskell", ocaml:"ocaml", zig:"zig",
+  nim:"nim", "objective-c":"objectivec", "objective-cpp":"objectivecpp", asm:"assembly",
+  "fortran-modern":"fortran", cobol:"cobol", pascal:"pascal", lisp:"lisp", solidity:"solidity",
+  nix:"nix", cmake:"cmake", latex:"latex", bibtex:"latex", wat:"wasm", bat:"batch", jade:"pug",
+  restructuredtext:"restructuredtext", plaintext:"text", astro:"astro", toml:"toml", mdx:"mdx",
+  handlebars:"html", razor:"csharp", cuda:"cpp", makefile:"build", hcl:"terraform",
+ };
+ const filenames = {
+  "cmakelists.txt":"cmake", "mix.exs":"elixir", "mix.lock":"lock", "build.sbt":"scala",
+  "project.clj":"clojure", "flake.lock":"lock", "project.toml":"julia", "manifest.toml":"lock",
+  "build.zig.zon":"zig", "pubspec.yaml":"dart", "deno.lock":"lock", ".gitlab-ci.yml":"ci",
+  "chart.yaml":"kubernetes", "devcontainer.json":"docker", "eslint.config.cjs":"eslint",
+  "prettier.config.mjs":"prettier", "vite.config.mts":"vite", "jest.config.cjs":"test",
+  "openapi.json":"openapi", "conftest.py":"test", "tsconfig.build.json":"typescript",
+ };
+ let baseline;
+ for(const entry of themes){
+  const t=JSON.parse(content(new URL("../"+entry.path,import.meta.url)));
+  for(const [map, expected] of [[t.fileExtensions,extensions],[t.languageIds,languages],[t.fileNames,filenames]]){
+   for(const [name,kind] of Object.entries(expected))assert.equal(map[name],`file_${kind}`,`${entry.id}: ${name}`);
+  }
+  const associations=[t.fileExtensions,t.fileNames,t.languageIds,t.folderNames,t.folderNamesExpanded];
+  if(baseline)assert.deepEqual(associations,baseline,"Palette coverage differs");
+  baseline=associations;
+  // Newly drawn symbols must also be distinguishable without color.
+  const drawings=Object.values(extensions).slice(0,30).map(kind=>content(new URL(`../assets/${entry.id.slice(4)}/file-${kind}.svg`,import.meta.url)));
+  assert.equal(new Set(drawings).size,30,"New file categories share identical artwork");
+ }
+});
 test("preview atlas is visibly marked as conceptual, not screenshot",()=>{
  const svg=content(new URL("../gallery/overview.svg",import.meta.url));
  assert.match(svg,/Conceptual catalog/);
  assert.match(svg,/Not an actual editor screenshot/);
 });
 
-test("v0.1.2 product preview and exact CI-publish release contract",()=>{
+test("stable product metadata and exact CI-publish release contract",()=>{
  const readme=content(new URL("../README.md",import.meta.url));
  assert.match(readme,/!\[[^\]]+\]\(gallery\/overview\.png\)/);
  assert.doesNotMatch(readme,/!\[[^\]]+\]\((?:\.\/)?(?:gallery|assets|docs)\/[^)]*\.svg\)/);
@@ -90,5 +133,5 @@ test("v0.1.2 product preview and exact CI-publish release contract",()=>{
  assert.match(wf,/--trusted-publishing/);
  assert.match(wf,/--oidc/);
  assert.doesNotMatch(wf,/npm run (check|package)|node --test/);
- for(const s of [pkg.scripts.package,ci])assert.match(s,/armotusitio-icons-0\.1\.2\.vsix/);
+ for(const s of [pkg.scripts.package,ci])assert.ok(s.includes(`armotusitio-icons-${pkg.version}.vsix`));
 });

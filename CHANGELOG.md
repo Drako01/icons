@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.2.0] — Expanded coverage and stable release metadata
+
+- Set `preview` to `false` for the next publication and remove the Preview label from the CI workflow name.
+- Add 30 original vector symbols in Prism, Daylight, Focus and High Contrast.
+- Cover additional scientific, functional, systems and legacy languages, templates, documents and WebAssembly.
+- Expand to 107 file categories, 305 extension associations, 175 exact filenames and 83 language IDs.
+- Preserve existing associations and generic fallbacks, with broader config, test and media format recognition.
+- Verify both package metadata and VSIX preview/pre-release flags; align packaging and CI with version 0.2.0.
+
 ## [0.1.2] — Silhouette-first icon redesign
 
 - Larger, frameless file symbols with technology-specific vector artwork and path-based monograms.

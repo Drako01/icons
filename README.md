@@ -2,7 +2,7 @@
 
 **Iconos originales. Reconocimiento inmediato. Un Explorer que trabaja a tu favor.**
 
-[![CI](https://github.com/Drako01/icons/actions/workflows/ci.yml/badge.svg)](https://github.com/Drako01/icons/actions/workflows/ci.yml) ![Version](https://img.shields.io/badge/version-0.1.2-F9ED32?labelColor=141B22) ![VS%20Code](https://img.shields.io/badge/VS%20Code-1.90%2B-2C3E50) ![License](https://img.shields.io/badge/license-MIT-2C3E50) ![Runtime](https://img.shields.io/badge/runtime-zero-2C3E50)
+[![CI](https://github.com/Drako01/icons/actions/workflows/ci.yml/badge.svg)](https://github.com/Drako01/icons/actions/workflows/ci.yml) ![Version](https://img.shields.io/badge/version-0.2.0-F9ED32?labelColor=141B22) ![VS%20Code](https://img.shields.io/badge/VS%20Code-1.90%2B-2C3E50) ![License](https://img.shields.io/badge/license-MIT-2C3E50) ![Runtime](https://img.shields.io/badge/runtime-zero-2C3E50)
 
 <p align="center">
   <a href="https://marketplace.visualstudio.com/items?itemName=armotusitio.armotusitio-icons"><strong>Visual Studio Marketplace</strong></a> &nbsp;·&nbsp;
@@ -63,7 +63,18 @@ Cada estilo es un **File Icon Theme independiente**. No modifica tu tema de colo
 
 </details>
 
-El catálogo actual define **77 categorías visuales de archivo**, **44 categorías de carpeta**, **168 asociaciones por extensión**, **94 nombres de archivo** y **112 asociaciones de carpeta**, además de los identificadores de lenguaje. No significa que existan tantos dibujos independientes por cada alias: varias extensiones comparten un símbolo cuando representan el mismo concepto.
+El catálogo actual define **107 categorías visuales de archivo**, **44 categorías de carpeta**,
+**305 asociaciones por extensión**, **175 nombres de archivo**, **112 asociaciones de carpeta**
+y **83 identificadores de lenguaje**. Varias extensiones comparten un símbolo cuando representan el mismo concepto.
+
+La versión 0.2.0 agrega símbolos para Lua, R, Julia, Perl, Scala, Groovy, F#, Clojure, Elixir, Erlang,
+Haskell, OCaml, Zig, Nim, Objective-C/C++, Assembly, Fortran, COBOL, Pascal, Lisp, Solidity, Nix,
+CMake, LaTeX, documentos de oficina, WebAssembly, Batch, Pug y reStructuredText.
+También amplía las asociaciones de configuraciones, tests, plantillas y formatos multimedia.
+La cobertura no incluye todos los lenguajes ni extensiones existentes;
+los archivos sin asociación usan el icono genérico.
+
+La próxima publicación se prepara como **release**, con `preview: false` y sin la etiqueta Preview.
 
 ### Instalación
 
@@ -81,7 +92,7 @@ Buscá **ArmoTuSitio Icons**, instalá la extensión publicada por **armotusitio
 Descargá la versión desde [GitHub Releases](https://github.com/Drako01/icons/releases), o el artefacto **validated-vsix** de una ejecución verde de [CI](https://github.com/Drako01/icons/actions/workflows/ci.yml). Verificá su archivo de checksum antes de instalar.
 
 ~~~powershell
-code --install-extension .\armotusitio-icons-0.1.2.vsix
+code --install-extension .\armotusitio-icons-0.2.0.vsix
 ~~~
 
 El mismo VSIX puede utilizarse en ArmoTuSitio IDE y forks compatibles que soporten File Icon Themes.
@@ -116,6 +127,10 @@ ArmoTuSitio Icons delivers a distinctive, precision-crafted file and folder icon
 
 **Four selectable styles:** Prism (premium dark), Daylight (light), Focus (low distraction), and High Contrast (enhanced visual separation). Each includes distinct open/closed folder artwork and a wide set of native VS Code associations for modern development.
 
+Version 0.2.0 adds 30 file symbols across all four palettes, bringing coverage to 107 file categories,
+305 extension associations, 175 exact filenames and 83 language IDs. Unrecognized files keep the generic fallback.
+The next publication uses `preview: false` to remove the Preview label.
+
 ### What makes it different?
 
 - **Original artwork** — coherent geometry instead of copies of other extensions or third-party technology logos.
@@ -144,8 +159,8 @@ El desarrollo utiliza Node.js 24 para la generación local y GitHub Actions, sin
 ~~~bash
 npm run build      # Generar SVG y los cuatro temas de iconos
 npm run check      # Generador + tests de integridad, asociaciones y seguridad
-npm run package    # Empaquetar armotusitio-icons-0.1.2.vsix
-python3 scripts/verify-vsix.py dist/armotusitio-icons-0.1.2.vsix
+npm run package    # Empaquetar armotusitio-icons-0.2.0.vsix
+python3 scripts/verify-vsix.py dist/armotusitio-icons-0.2.0.vsix
 ~~~
 
 El CI valida Ubuntu, Windows y macOS. La publicación de cambios de versión en **main** reutiliza el VSIX y el SHA-256 verificados en el PR; no recompila ni repite la matriz de pruebas tras el merge. Los dos registros se publican mediante **OIDC Trusted Publishing** y el release incorpora exactamente el mismo VSIX.

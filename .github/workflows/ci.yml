@@ -1,4 +1,4 @@
-name: Preview CI
+name: CI
 on:
   pull_request:
   workflow_dispatch:
@@ -30,7 +30,7 @@ jobs:
       - name: Package the validated source once
         run: npm run package
       - name: Verify exact VSIX, asset manifest and SHA-256
-        run: python3 scripts/verify-vsix.py dist/armotusitio-icons-0.1.2.vsix
+        run: python3 scripts/verify-vsix.py dist/armotusitio-icons-0.2.0.vsix
       - uses: actions/upload-artifact@v4
         with:
           name: validated-vsix

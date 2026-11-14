@@ -22,4 +22,8 @@ The **first public version, 0.1.0**, was manually published to Visual Studio Mar
 
 The README image is a PNG generated from the original SVG gallery. Marketplace explicitly forbids embedding untrusted SVG in the README. The real screenshot acceptance is separate from this catalog preview.
 
-**Release authorization:** the repository owner authorizes publication of 0.1.2 by merging its passing version-bumping PR.
+Version **0.2.0** is prepared with `preview: false`. The VSIX verifier rejects preview or pre-release packages.
+The next publication removes the Preview label; publishing and registry verification remain separate steps.
+
+**Release authorization:** the repository owner authorizes publication of 0.2.0
+by merging its passing version-bumping PR.
